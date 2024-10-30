@@ -2,8 +2,10 @@ package autorestapi.accuweather.current;
 
 import autorestapi.accuweather.AbstractAccuweatherTest;
 import autorestapi.accuweather.conditions.historical.Historical;
+import io.qameta.allure.*;
 import org.hamcrest.Matchers;
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import java.util.List;
 import static io.restassured.RestAssured.given;
@@ -11,6 +13,12 @@ import static io.restassured.RestAssured.given;
 public class HistoricalSixHourTest extends AbstractAccuweatherTest {
 
     @Test
+    @DisplayName("HistoricalSixHourTest")
+    @Description("GET Historical Current Conditions (past 6 hours)")
+    @Severity(SeverityLevel.NORMAL)
+    @Story(value = "Request testing By ID 5")
+    @Link("https://developer.accuweather.com/accuweather-current-conditions-api/apis")
+    @Owner("Ekaterina Saldik")
     void getHistoricalSixHour() {
 
         List<Historical> response = given()

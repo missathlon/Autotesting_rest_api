@@ -2,8 +2,10 @@ package autorestapi.accuweather.locations;
 
 import autorestapi.accuweather.AbstractAccuweatherTest;
 import autorestapi.accuweather.locations.locationKey.LocationKey;
+import io.qameta.allure.*;
 import org.hamcrest.Matchers;
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import java.util.List;
 import static io.restassured.RestAssured.given;
@@ -11,6 +13,12 @@ import static io.restassured.RestAssured.given;
 public class TextSearchCityTest extends AbstractAccuweatherTest {
 
     @Test
+    @DisplayName("City Search")
+    @Description("Returns information for an array of cities that match the search text.")
+    @Severity(SeverityLevel.CRITICAL)
+    @Story(value = "Request testing By Ankara")
+    @Link("https://developer.accuweather.com/accuweather-locations-api/apis")
+    @Owner("Ekaterina Saldik")
     void getTextSearchCity() {
 
         List<LocationKey> response = given()

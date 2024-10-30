@@ -2,8 +2,10 @@ package autorestapi.accuweather.indices;
 
 import autorestapi.accuweather.AbstractAccuweatherTest;
 import autorestapi.accuweather.indices.oneDay.OneDay;
+import io.qameta.allure.*;
 import org.hamcrest.Matchers;
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import java.util.List;
 import static io.restassured.RestAssured.given;
@@ -11,6 +13,12 @@ import static io.restassured.RestAssured.given;
 public class OneDayValuesGroupTest extends AbstractAccuweatherTest {
 
     @Test
+    @DisplayName("1 Day of Daily Index Values for a Group of Indices")
+    @Description("Returns daily index data for a specific group of indices, by location key.")
+    @Severity(SeverityLevel.NORMAL)
+    @Story(value = "Request testing By ID 5, group ID 8")
+    @Link("https://developer.accuweather.com/accuweather-indices-api/apis")
+    @Owner("Ekaterina Saldik")
     void getOneDayValuesGroup() {
 
         List<OneDay> response = given()

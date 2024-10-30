@@ -2,8 +2,10 @@ package autorestapi.accuweather.indices;
 
 import autorestapi.accuweather.AbstractAccuweatherTest;
 import autorestapi.accuweather.indices.metadata.Metadata;
+import io.qameta.allure.*;
 import org.hamcrest.Matchers;
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import java.util.List;
 import static io.restassured.RestAssured.given;
@@ -11,6 +13,12 @@ import static io.restassured.RestAssured.given;
 public class ListDailyGroupTest extends AbstractAccuweatherTest {
 
     @Test
+    @DisplayName("List of Index Groups")
+    @Description("Returns metadata for all index groups.")
+    @Severity(SeverityLevel.TRIVIAL)
+    @Story(value = "Request testing")
+    @Link("https://developer.accuweather.com/accuweather-indices-api/apis")
+    @Owner("Ekaterina Saldik")
     void getListDailyGroupIndices() {
 
         List<Metadata> response = given()
